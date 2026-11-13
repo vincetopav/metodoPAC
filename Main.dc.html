@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Método PAC · Parejas Abundantes y Conscientes</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&amp;family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F1E8E0}
+a{color:#A63D52}a:hover{color:#7E2A3C}
+html{scroll-behavior:smooth}
+details summary{cursor:pointer;list-style:none}
+details summary::-webkit-details-marker{display:none}
+details[open] .plus{transform:rotate(45deg)}
+.cta:hover{background:#7E2A3C !important}
+.cta-light:hover{background:#FFFFFF !important}
+@media (max-width:720px){.hide-sm{display:none !important}}
+</style>
+</helmet>
+<div style="font-family: 'DM Sans', system-ui, sans-serif; color: #2B1B2F; background: #F1E8E0; font-size: 17px; line-height: 1.6">
+
+<!-- Barra superior -->
+<header style="position: sticky; top: 0; z-index: 10; background: rgba(43,27,47,0.96); border-bottom: 1px solid #4A3550">
+<div style="max-width: 1160px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px">
+<div style="display: flex; align-items: baseline; gap: 10px">
+<span style="font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-weight: 600; color: #FFFFFF">Método PAC</span>
+<span class="hide-sm" style="font-size: 13px; color: #CDB8BC">Parejas Abundantes y Conscientes</span>
+</div>
+<a class="cta-light" href="{{link}}" style="background: #EADBCD; color: #2B1B2F; text-decoration: none; font-weight: 700; font-size: 15px; padding: 11px 20px; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Quiero entrar</a>
+</div>
+</header>
+
+<!-- Hero con video -->
+<section style="background: #2B1B2F; color: #F3E8E2">
+<div style="max-width: 1160px; margin: 0 auto; padding: 72px 24px 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 48px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 22px">
+<p style="margin: 0; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #E8B4A8; font-weight: 700">Método PAC · de Valentina Ortiz y Javi Rodríguez</p>
+<h1 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: clamp(42px, 5.4vw, 66px); line-height: 1.06; color: #FFFFFF">No te falta amor. <em style="color: #E8B4A8">Te faltan herramientas.</em></h1>
+<p style="margin: 0; font-size: 19px; color: #E2D2D4; max-width: 32em"><strong style="color: #FFFFFF">24 lecciones grabadas de Valen y Javi, en 4 fases: primero tú, después la pareja.</strong> Para cuando la discusión es siempre la misma, estás soltera o estás saliendo de una ruptura.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center">
+<a class="cta-light" href="{{link}}" style="background: #EADBCD; color: #2B1B2F; text-decoration: none; font-weight: 700; font-size: 17px; padding: 16px 28px; border-radius: 999px; min-height: 52px; box-sizing: border-box; display: inline-flex; align-items: center">Quiero entrar al Método PAC</a>
+<span style="font-size: 15px; color: #CDB8BC"><strong style="color: #FFFFFF">USD 37</strong> · pago único · 1 año de acceso · 7 días de garantía</span>
+</div>
+</div>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
+<video controls="true" preload="metadata" playsInline="true" poster="./assets/3546785d3d55a277eda4d57449ae51ed.jpg" src="./assets/4933949ec71052530b071a29972c0199.mp4" style="width: 100%; aspect-ratio: 16 / 9; border-radius: 22px; background: #1C111F; display: block; box-shadow: 0 30px 70px rgba(0,0,0,0.35)"></video>
+<figcaption style="font-size: 14px; color: #CDB8BC; text-align: center">Mira la clase de Valentina y Javi · 16 min</figcaption>
+</figure>
+</div>
+<div style="max-width: 1160px; margin: 0 auto; padding: 8px 24px 56px; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 28px; font-size: 14px; color: #D8C6C9">
+<span>Para mujeres y hombres: en pareja, solteros o superando una ruptura</span>
+<span aria-hidden="true" style="color: #E8B4A8">·</span>
+<span>20 a 30 minutos al día, desde el móvil</span>
+<span aria-hidden="true" style="color: #E8B4A8">·</span>
+<span>Más de 2.500 personas dentro de PAC</span>
+</div>
+</section>
+
+<!-- Idea central -->
+<section style="max-width: 1160px; margin: 0 auto; padding: 96px 24px 32px; display: flex; flex-direction: column; gap: 44px">
+<div style="max-width: 820px; display: flex; flex-direction: column; gap: 18px">
+<h2 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: clamp(32px, 4vw, 48px); line-height: 1.15">Sentir amor y saber construir amor son dos habilidades diferentes.</h2>
+<p style="margin: 0; font-size: 19px; color: #4F3F52">Tu pareja puede impulsarte o hundirte. Y lo que atraes depende de en quién te has convertido: mientras sigas operando desde patrones que no te sirven, vas a seguir atrayendo lo mismo. Por eso el orden es primero tú y después la pareja.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 20px">
+<div style="background: #FAF6F2; border: 1px solid #D8C6B8; border-radius: 22px; padding: 32px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: #5A4A5C">Ayer</span>
+<p style="margin: 0; color: #4F3F52">Las relaciones duraban, pero muchas se sostenían desde el miedo, reprimiendo emociones y repitiendo heridas.</p>
+</div>
+<div style="background: #FAF6F2; border: 1px solid #D8C6B8; border-radius: 22px; padding: 32px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: #5A4A5C">Hoy</span>
+<p style="margin: 0; color: #4F3F52">No duran. Hombres y mujeres compiten entre sí, huir es el camino fácil y la infidelidad se volvió común.</p>
+</div>
+<div style="background: #A63D52; border-radius: 22px; padding: 32px; display: flex; flex-direction: column; gap: 10px; color: #FFFFFF">
+<span style="font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: #FBE3DF">La tercera vía</span>
+<p style="margin: 0">Una relación que dura porque se construye desde la conciencia. Eso es lo que propone PAC.</p>
+</div>
+</div>
+</section>
+
+<!-- Patrones -->
+<section style="max-width: 1160px; margin: 0 auto; padding: 72px 24px 88px; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 14px; max-width: 760px">
+<p style="margin: 0; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: #A63D52; font-weight: 700">Antes de seguir</p>
+<h2 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.15">¿Te reconoces en alguno de estos <em style="color: #A63D52">4 patrones</em>?</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 24px">
+<div style="border-top: 2px solid #2B1B2F; padding-top: 20px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'Playfair Display', Georgia, serif; font-size: 22px; color: #A63D52">01</span>
+<h3 style="margin: 0; font-size: 20px">La “madre” de la relación</h3>
+<p style="margin: 0; color: #4F3F52">Organizas, decides, sostienes… y se te va la admiración.</p>
+</div>
+<div style="border-top: 2px solid #2B1B2F; padding-top: 20px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'Playfair Display', Georgia, serif; font-size: 22px; color: #A63D52">02</span>
+<h3 style="margin: 0; font-size: 20px">Persigues</h3>
+<p style="margin: 0; color: #4F3F52">Escribes de más, insistes y terminas pidiendo perdón por algo que no hiciste.</p>
+</div>
+<div style="border-top: 2px solid #2B1B2F; padding-top: 20px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'Playfair Display', Georgia, serif; font-size: 22px; color: #A63D52">03</span>
+<h3 style="margin: 0; font-size: 20px">La montaña rusa</h3>
+<p style="margin: 0; color: #4F3F52">Gritos o días de silencio, midiendo cada palabra.</p>
+</div>
+<div style="border-top: 2px solid #2B1B2F; padding-top: 20px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'Playfair Display', Georgia, serif; font-size: 22px; color: #A63D52">04</span>
+<h3 style="margin: 0; font-size: 20px">Siempre el mismo tipo</h3>
+<p style="margin: 0; color: #4F3F52">Conoces tus heridas y aun así te enganchas con quien no está disponible o no quiere compromiso.</p>
+</div>
+</div>
+<div style="background: #E4D5C8; border-radius: 22px; padding: 32px 36px; display: flex; flex-direction: column; gap: 10px">
+<h3 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 26px">No estás rota: nadie te enseñó a hacerlo de otra forma</h3>
+<p style="margin: 0; color: #3F3042; max-width: 58em">Lo que en realidad deseas es un compañero o compañera de vida a la altura de tu grandeza. Poder decir “esto me duele” sin atacar, poner límites sin que suene a amenaza y elegir a tu pareja sin dejar de elegirte.</p>
+</div>
+</section>
+
+<!-- Banda de foto -->
+<section style="position: relative; background: #2B1B2F">
+<img src="./assets/a70cdaed7d4d4466877dd2762db21e10.jpg" alt="Valentina y Javi frente a frente en el escenario, mirándose a los ojos" style="display: block; width: 100%; height: clamp(360px, 46vw, 620px); object-fit: cover; object-position: center 35%; opacity: 0.78">
+<div style="position: absolute; inset: 0; display: flex; align-items: flex-end; justify-content: center; padding: 40px 24px; background: linear-gradient(180deg, rgba(43,27,47,0) 40%, rgba(43,27,47,0.88) 100%)">
+<p style="margin: 0; max-width: 820px; text-align: center; font-family: 'Playfair Display', Georgia, serif; font-size: clamp(26px, 3.4vw, 42px); line-height: 1.2; color: #FFFFFF">No están peleando entre ustedes. <em style="color: #E8B4A8">Están reaccionando desde sus heridas.</em></p>
+</div>
+</section>
+
+<!-- Tres momentos + para quién no es -->
+<section style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 14px; max-width: 760px">
+<p style="margin: 0; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: #A63D52; font-weight: 700">Para quién es</p>
+<h2 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.15">Para tres momentos de tu vida</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 24px">
+<div style="background: #FAF6F2; border: 1px solid #D8C6B8; border-radius: 22px; padding: 32px; display: flex; flex-direction: column; gap: 12px">
+<span style="font-family: 'Playfair Display', Georgia, serif; font-size: 30px; color: #A63D52">1</span>
+<h3 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 26px">Estás en pareja</h3>
+<p style="margin: 0; color: #4F3F52">Discuten siempre por lo mismo, sientes que tiras de todo o que la relación se apagó. Puedes hacerlo sola o con tu pareja.</p>
+</div>
+<div style="background: #FAF6F2; border: 1px solid #D8C6B8; border-radius: 22px; padding: 32px; display: flex; flex-direction: column; gap: 12px">
+<span style="font-family: 'Playfair Display', Georgia, serif; font-size: 30px; color: #A63D52">2</span>
+<h3 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 26px">Estás soltera o soltero</h3>
+<p style="margin: 0; color: #4F3F52">No quieres que tu próxima relación sea otra versión de la anterior. La soltería es un espacio para mirar hacia adentro, no una sala de espera.</p>
+</div>
+<div style="background: #FAF6F2; border: 1px solid #D8C6B8; border-radius: 22px; padding: 32px; display: flex; flex-direction: column; gap: 12px">
+<span style="font-family: 'Playfair Display', Georgia, serif; font-size: 30px; color: #A63D52">3</span>
+<h3 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 26px">Sales de una ruptura</h3>
+<p style="margin: 0; color: #4F3F52">Quieres cerrarla de verdad, sin tapar el dolor con “curitas”, para no llevar la herida a la siguiente relación.</p>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 760px">
+<h3 style="margin: 0; font-size: 19px">Cuándo no es para ti</h3>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; color: #4F3F52">
+<li>Si buscas que alguien te diga que el problema es solo del otro.</li>
+<li>Si buscas una fórmula para “conseguir pareja” como en una aplicación.</li>
+<li>Si buscas terapia: PAC es formación y práctica, no terapia.</li>
+<li>Si en tu relación hay violencia: ahí lo primero es pedir ayuda profesional, no un curso.</li>
+</ul>
+</div>
+</section>
+
+<!-- Qué cambia -->
+<section style="background: #E4D5C8">
+<div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 14px; max-width: 760px">
+<p style="margin: 0; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: #8E3346; font-weight: 700">Para qué entras</p>
+<h2 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.15">Una relación consciente, <em style="color: #8E3346">completa y abundante</em></h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 18px">
+<sc-for list="{{cambios}}" as="c" hint-placeholder-count="6">
+<div style="background: #FAF6F2; border-radius: 20px; padding: 26px 28px; display: flex; flex-direction: column; gap: 6px">
+<h3 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 22px; line-height: 1.25">{{c.titulo}}</h3>
+<p style="margin: 0; color: #4F3F52; font-size: 16px">{{c.texto}}</p>
+</div>
+</sc-for>
+</div>
+<p style="margin: 0; text-align: center; font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: clamp(24px, 2.8vw, 32px); color: #2B1B2F">“No es solo una relación con otra persona: es una nueva versión de ti.”</p>
+</div>
+</section>
+
+<!-- Módulos -->
+<section style="background: #2B1B2F; color: #F3E8E2">
+<div style="max-width: 1160px; margin: 0 auto; padding: 104px 24px; display: flex; flex-direction: column; gap: 44px">
+<div style="display: flex; flex-direction: column; gap: 14px; max-width: 760px">
+<p style="margin: 0; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: #E8B4A8; font-weight: 700">Qué incluye</p>
+<h2 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.15; color: #FFFFFF">Cuatro fases, <em style="color: #E8B4A8">en orden</em></h2>
+<p style="margin: 0; color: #D8C6C9">Te conviertes, atraes, construyes y escalas. Todo se apoya en cuatro pilares: amor, crecimiento espiritual en conjunto, sexualidad que se construye cada día y un propósito común.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); gap: 22px">
+<sc-for list="{{modulos}}" as="m" hint-placeholder-count="4">
+<div style="background: #35223A; border: 1px solid #5A4560; border-radius: 24px; padding: 34px; display: flex; flex-direction: column; gap: 14px">
+<span style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: #E8B4A8">{{m.num}}</span>
+<h3 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 26px; line-height: 1.2; color: #FFFFFF">{{m.titulo}}</h3>
+<p style="margin: 0; font-size: 15px; color: #D8C6C9">{{m.lecciones}}</p>
+<div style="margin-top: auto; background: #EADBCD; color: #2B1B2F; border-radius: 16px; padding: 14px 20px">
+<span style="font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: #8E3346">Al terminar</span>
+<p style="margin: 4px 0 0; font-weight: 500">{{m.resultado}}</p>
+</div>
+</div>
+</sc-for>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<sc-for list="{{incluye}}" as="i" hint-placeholder-count="8">
+<span style="border: 1px solid #5A4560; border-radius: 999px; padding: 8px 16px; font-size: 14px; color: #EADBCD">{{i}}</span>
+</sc-for>
+</div>
+<p style="margin: 0; font-size: 14px; color: #BFA9AE">Todo es grabado y a tu ritmo, en la app de Millonarios Conscientes (espacio “Método PAC”). No incluye clases en vivo ni videollamadas.</p>
+</div>
+</section>
+
+<!-- Creadores -->
+<section style="max-width: 1160px; margin: 0 auto; padding: 104px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 56px; align-items: center">
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: end">
+<img src="./assets/ad9fb29d4a68afabdef3fcc4f6f11c30.jpg" alt="Valentina y Javi celebrando de la mano frente al público" style="width: 100%; aspect-ratio: 2 / 3; object-fit: cover; border-radius: 22px; display: block">
+<img src="./assets/c652c94f4e294cdb02021a0dab18e699.jpg" alt="Valentina y Javi de la mano en el escenario" style="width: 100%; aspect-ratio: 2 / 3; object-fit: cover; object-position: center 20%; border-radius: 22px; display: block; margin-bottom: 48px">
+</div>
+<div style="display: flex; flex-direction: column; gap: 18px">
+<p style="margin: 0; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: #A63D52; font-weight: 700">Quiénes son Valen y Javi</p>
+<h2 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.12">Lo que enseñan en un escenario, <em style="color: #A63D52">ahora en tu móvil</em></h2>
+<p style="margin: 0; color: #4F3F52">Valentina Ortiz y Javi Rodríguez están casados y aplican el método en su propia relación. Antes de estar juntos, los dos venían de relaciones que repetían los mismos patrones. Decidieron construir la suya desde Un Curso de Milagros y el mapa de los niveles de conciencia, sin que Valentina renunciara a su feminidad ni Javi reprimiera su masculinidad.</p>
+<p style="margin: 0; color: #4F3F52">PAC nace de más de cinco años estudiando a referentes en relaciones conscientes, filtrado por su propia experiencia.</p>
+<p style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 24px">“No somos una pareja perfecta.”</p>
+</div>
+</section>
+
+<!-- Precio -->
+<section id="precio" style="background: #E4D5C8">
+<div style="max-width: 1160px; margin: 0 auto; padding: 104px 24px; display: flex; flex-direction: column; align-items: center; gap: 28px">
+<div style="width: 100%; max-width: 580px; background: #FAF6F2; border: 1px solid #D8C6B8; border-radius: 28px; padding: 44px 40px; box-sizing: border-box; display: flex; flex-direction: column; gap: 22px; text-align: center; box-shadow: 0 24px 60px rgba(43,27,47,0.12)">
+<span style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: #A63D52">Método PAC</span>
+<h2 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 34px; line-height: 1.15">Empieza hoy, <em style="color: #A63D52">a tu ritmo</em></h2>
+<div style="font-family: 'Playfair Display', Georgia, serif; font-size: 76px; line-height: 1">USD 37</div>
+<span style="font-size: 15px; color: #5A4A5C">Un solo pago · 1 año de acceso · menos de 2 USD por lección<br>42,35 € con IVA en España; en otros países Hotmart te muestra tu moneda.</span>
+<ul style="margin: 0 auto; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; text-align: left; font-size: 16px">
+<sc-for list="{{checklist}}" as="k" hint-placeholder-count="4">
+<li style="display: flex; gap: 12px; align-items: flex-start">
+<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A63D52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 3px"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
+<span>{{k}}</span>
+</li>
+</sc-for>
+</ul>
+<a class="cta" href="{{link}}" style="background: #A63D52; color: #FFFFFF; text-decoration: none; font-weight: 700; font-size: 18px; padding: 18px 28px; border-radius: 999px; min-height: 56px; box-sizing: border-box; display: flex; align-items: center; justify-content: center">Quiero entrar al Método PAC</a>
+<span style="font-size: 14px; color: #5A4A5C">En el pago verás extras opcionales: no los necesitas para hacer PAC.</span>
+<div style="border-top: 1px solid #D8C6B8; padding-top: 22px; display: flex; gap: 18px; align-items: center; text-align: left">
+<div style="flex: none; width: 64px; height: 64px; border-radius: 50%; border: 2px solid #A63D52; display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1">
+<span style="font-family: 'Playfair Display', Georgia, serif; font-size: 26px; color: #A63D52">7</span>
+<span style="font-size: 10px; font-weight: 700; letter-spacing: 0.08em; color: #A63D52">DÍAS</span>
+</div>
+<p style="margin: 0; font-size: 15px; color: #4F3F52"><strong style="color: #2B1B2F">Garantía de 7 días.</strong> Entra, haz las primeras lecciones y, si sientes que no es para ti, pides el reembolso del 100% desde Hotmart.</p>
+</div>
+</div>
+<div style="width: 100%; max-width: 860px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 16px">
+<div style="display: flex; gap: 12px; align-items: flex-start"><span style="font-family: 'Playfair Display', Georgia, serif; font-size: 26px; color: #A63D52; line-height: 1">1</span><p style="margin: 0; font-size: 15px; color: #3F3042">Pagas en Hotmart con tarjeta, PayPal, Apple Pay o PSE.</p></div>
+<div style="display: flex; gap: 12px; align-items: flex-start"><span style="font-family: 'Playfair Display', Georgia, serif; font-size: 26px; color: #A63D52; line-height: 1">2</span><p style="margin: 0; font-size: 15px; color: #3F3042">Recibes el acceso en tu email en minutos.</p></div>
+<div style="display: flex; gap: 12px; align-items: flex-start"><span style="font-family: 'Playfair Display', Georgia, serif; font-size: 26px; color: #A63D52; line-height: 1">3</span><p style="margin: 0; font-size: 15px; color: #3F3042">Empiezas hoy con la bienvenida y la introducción.</p></div>
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section style="max-width: 860px; margin: 0 auto; padding: 104px 24px; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<p style="margin: 0; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: #A63D52; font-weight: 700">Dudas</p>
+<h2 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.15">Lo que más se pregunta</h2>
+</div>
+<div style="display: flex; flex-direction: column">
+<sc-for list="{{faqs}}" as="f" hint-placeholder-count="10">
+<details style="border-bottom: 1px solid #D8C6B8">
+<summary style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 20px 0; font-weight: 700; font-size: 18px; min-height: 44px">
+<span>{{f.q}}</span>
+<svg class="plus" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A63D52" stroke-width="2.2" stroke-linecap="round" style="flex: none; transition: transform .2s"><path d="M12 5v14M5 12h14"></path></svg>
+</summary>
+<p style="margin: 0 0 22px; color: #4F3F52">{{f.a}}</p>
+</details>
+</sc-for>
+</div>
+</section>
+
+<!-- CTA final -->
+<section style="background: #2B1B2F; color: #F3E8E2">
+<div style="max-width: 820px; margin: 0 auto; padding: 104px 24px; display: flex; flex-direction: column; align-items: center; gap: 22px; text-align: center">
+<h2 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: clamp(34px, 4.6vw, 56px); line-height: 1.1; color: #FFFFFF">Entenderlo no basta: <em style="color: #E8B4A8">hay que practicarlo</em></h2>
+<p style="margin: 0; color: #D8C6C9; font-size: 18px; max-width: 34em">Saber qué te pasa es el primer paso. Cambiarlo se consigue practicando, con un método ordenado y un ejercicio para cada lección. No se trata de olvidar al otro: se trata de recordarte a ti.</p>
+<a class="cta-light" href="{{link}}" style="background: #EADBCD; color: #2B1B2F; text-decoration: none; font-weight: 700; font-size: 18px; padding: 18px 32px; border-radius: 999px; min-height: 56px; box-sizing: border-box; display: inline-flex; align-items: center">Quiero entrar al Método PAC</a>
+<span style="font-size: 15px; color: #CDB8BC"><strong style="color: #FFFFFF">USD 37</strong> · 1 año de acceso · 7 días de garantía</span>
+<sc-if value="{{hasWa}}" hint-placeholder-val="{{ true }}">
+<a href="{{waLink}}" style="color: #E8B4A8; font-weight: 500">¿Tienes dudas antes de entrar? Escríbeme por WhatsApp</a>
+</sc-if>
+<p style="margin: 0; font-size: 14px; color: #BFA9AE">En la página oficial puedes leer experiencias de alumnas. Los resultados dependen de cada persona y de su práctica.</p>
+</div>
+</section>
+
+<footer style="background: #21142A">
+<div style="max-width: 1160px; margin: 0 auto; padding: 32px 24px 40px; display: flex; flex-direction: column; gap: 6px; font-size: 13px; color: #B9A4AA">
+<p style="margin: 0">Página de una embajadora del Método PAC. Programa de Valentina Ortiz y Javi Rodríguez, vendido a través de Hotmart. No es terapia ni sustituye la atención profesional.</p>
+<p style="margin: 0">¿Problemas con el acceso? Soporte por WhatsApp: +57 311 555 9542.</p>
+<p style="margin: 0">Este sitio no forma parte de Facebook™ ni de Meta Platforms, Inc.</p>
+</div>
+</footer>
+
+<!-- Barra de compra fija -->
+<div style="position: sticky; bottom: 0; z-index: 10; background: rgba(33,20,42,0.96); border-top: 1px solid #4A3550">
+<div style="max-width: 1160px; margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px 20px">
+<a class="cta-light" href="{{link}}" style="background: #EADBCD; color: #2B1B2F; text-decoration: none; font-weight: 700; font-size: 15px; padding: 12px 24px; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Quiero entrar al Método PAC</a>
+<span class="hide-sm" style="font-size: 14px; color: #CDB8BC"><strong style="color: #FFFFFF">USD 37</strong> · un solo pago · 7 días de garantía</span>
+</div>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"linkCompra":{"editor":"text","default":"#precio","section":"Enlaces"},"whatsapp":{"editor":"text","default":"","section":"Enlaces"},"$preview":{"width":1440,"height":9400}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const link = (this.props.linkCompra ?? '#precio') || '#precio';
+    const num = String(this.props.whatsapp ?? '').replace(/[^0-9]/g, '');
+    return {
+      link: link,
+      hasWa: num.length > 6,
+      waLink: 'https://wa.me/' + num + '?text=' + encodeURIComponent('Hola, quiero saber más sobre el Método PAC'),
+      cambios: [
+        { titulo: 'Dejas de repetir la misma discusión', texto: 'Sabes qué hacer en medio del conflicto, en vez de reaccionar.' },
+        { titulo: 'Te eliges primero', texto: 'Tu relación contigo y con Dios va antes que la pareja: desde ahí cambia cómo eliges.' },
+        { titulo: 'Sabes qué quieres y qué ya no negocias', texto: 'Sin claridad no hay poder: prioridades, valores y estándares.' },
+        { titulo: 'Dejas de intentar cambiar al otro a la fuerza', texto: 'Y de ser la “madre” de la relación: vuelves a admirar.' },
+        { titulo: 'Cierras ciclos sin cargar el pasado', texto: 'Lo que llegó, llegó para enseñarte, no para martirizarte.' },
+        { titulo: 'La llama no se apaga sola', texto: 'La relación se construye cada día, lleves el tiempo que lleves.' }
+      ],
+      modulos: [
+        { num: 'Módulo I', titulo: 'Tú, Dios y tus relaciones', lecciones: 'El Triángulo Sagrado · Los Cimientos del Amor Abundante · El Poder de Elegirte · El Nuevo Comienzo: Ya Ganaste', resultado: 'Sabes qué estás tolerando que no deberías, y por qué.' },
+        { num: 'Módulo II', titulo: 'Diseña y atrae tu relación ideal', lecciones: '¿Desde Dónde Estás Eligiendo? · Estándares de una Relación Consciente I y II · La Relación por Encima del Ego · Magnetismo Consciente · Identidad Magnética · Estado de Creación · Del Diseño a la Construcción', resultado: 'Tienes claro qué relación quieres y qué ya no negocias.' },
+        { num: 'Módulo III', titulo: 'Construye tu relación de pareja', lecciones: 'Volver a Presentarte · Conciencia Colectiva de la Relación · Estándares Elevados en Acción · El Más Amoroso Siempre Gana · Feminidad que Expande, Masculinidad que Provee · Edificar para Multiplicar · Elegir el Amor en el Conflicto · Sexualidad Consciente y Sagrada · Dirige tu Energía Sexual', resultado: 'Sabes qué hacer en medio de una discusión.' },
+        { num: 'Módulo IV', titulo: 'Escala y expande', lecciones: 'El Nuevo Nivel de tu Relación: cómo sostener la expansión cuando desaparece la novedad', resultado: 'La relación deja de ser algo que sostienes y pasa a ser algo que construyen.' }
+      ],
+      incluye: ['24 lecciones en video', 'Cuaderno de trabajo', 'Ejercicios para descubrir patrones', 'Meditaciones y audios guiados', 'Prácticas para parejas', 'Retos para la vida real', 'Comunidad de WhatsApp', '20–30 min al día, desde el móvil'],
+      checklist: ['24 lecciones grabadas en 4 módulos', 'Cuaderno de trabajo con ejercicios', 'Para hacerlo sola o en pareja', '20 a 30 minutos al día, desde el móvil'],
+      faqs: [
+        { q: '¿Es en vivo? ¿Puedo hablar con ellos?', a: 'Son lecciones grabadas con cuaderno de trabajo, para ver cuando quieras durante tu año de acceso. No hay clases en vivo ni videollamadas.' },
+        { q: 'Mi pareja no quiere hacerlo. ¿Sirve igual?', a: 'Está pensado para que lo haga una persona: cuando una deja de reaccionar igual, la dinámica cambia. Con honestidad, hay situaciones que requieren de dos, pero empezar por ti te da claridad.' },
+        { q: '¿Sirve si estoy soltera, soy hombre o acabo de separarme?', a: 'Sí. Trabajas tus patrones para que la próxima relación no sea otra versión de la anterior.' },
+        { q: 'No creo que un programa grabado me ayude a encontrar pareja', a: 'No es para buscar pareja como en una aplicación. Es para dejar de repetir los patrones que sabotean tu forma de amar, con claridad, guía, estructura y práctica.' },
+        { q: 'Ya lo intentamos todo', a: 'Quizá no hace falta intentar más de lo mismo, sino pasar de “¿quién tuvo la culpa?” a “¿qué patrón estamos repitiendo?”.' },
+        { q: '¿Cuánto es en mi moneda?', a: 'El precio es USD 37 (42,35 € con IVA en España). En el resto de países, Hotmart te muestra el precio en tu moneda antes de pagar.' },
+        { q: '¿Son psicólogos? ¿Es terapia?', a: 'No. Es formación y práctica. Si estás pasando por algo muy duro, acompáñalo con un profesional.' },
+        { q: '¿Y si no tengo tiempo?', a: 'Con 20 a 30 minutos al día alcanza. Importa la constancia, no las horas.' },
+        { q: '¿Es seguro pagar en Hotmart?', a: 'Sí. El pago, el acceso y la garantía de 7 días se gestionan en Hotmart. Puedes pagar con tarjeta, PayPal, Apple Pay o PSE, y el acceso llega a tu email en minutos.' },
+        { q: '¿Y si me arrepiento?', a: 'Tienes 7 días de garantía: haces las primeras lecciones y, si no es para ti, pides el reembolso del 100% en Hotmart.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
